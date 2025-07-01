@@ -229,4 +229,49 @@ backToTopButton.addEventListener('mouseenter', () => {
 backToTopButton.addEventListener('mouseleave', () => {
     backToTopButton.style.background = '#2563eb';
     backToTopButton.style.transform = 'translateY(0)';
-}); 
+});
+
+// 语言切换功能
+const langEnBtn = document.getElementById('lang-en');
+const langZhBtn = document.getElementById('lang-zh');
+
+function setLang(lang) {
+    // 导航
+    document.getElementById('nav-menu-en').style.display = lang === 'en' ? '' : 'none';
+    document.getElementById('nav-menu-zh').style.display = lang === 'zh' ? '' : 'none';
+    // 首页
+    document.getElementById('home-en').style.display = lang === 'en' ? '' : 'none';
+    document.getElementById('home-zh').style.display = lang === 'zh' ? '' : 'none';
+    // 教育
+    document.getElementById('about-title-en').style.display = lang === 'en' ? '' : 'none';
+    document.getElementById('about-title-zh').style.display = lang === 'zh' ? '' : 'none';
+    document.getElementById('about-en').style.display = lang === 'en' ? '' : 'none';
+    document.getElementById('about-zh').style.display = lang === 'zh' ? '' : 'none';
+    // 技能
+    document.getElementById('skills-title-en').style.display = lang === 'en' ? '' : 'none';
+    document.getElementById('skills-title-zh').style.display = lang === 'zh' ? '' : 'none';
+    document.getElementById('skills-en').style.display = lang === 'en' ? '' : 'none';
+    document.getElementById('skills-zh').style.display = lang === 'zh' ? '' : 'none';
+    // 项目
+    document.getElementById('projects-title-en').style.display = lang === 'en' ? '' : 'none';
+    document.getElementById('projects-title-zh').style.display = lang === 'zh' ? '' : 'none';
+    document.getElementById('projects-en').style.display = lang === 'en' ? '' : 'none';
+    document.getElementById('projects-zh').style.display = lang === 'zh' ? '' : 'none';
+    // 联系
+    document.getElementById('contact-title-en').style.display = lang === 'en' ? '' : 'none';
+    document.getElementById('contact-title-zh').style.display = lang === 'zh' ? '' : 'none';
+    document.getElementById('contact-info-en').style.display = lang === 'en' ? '' : 'none';
+    document.getElementById('contact-info-zh').style.display = lang === 'zh' ? '' : 'none';
+    // 页脚
+    document.getElementById('footer-en').style.display = lang === 'en' ? '' : 'none';
+    document.getElementById('footer-zh').style.display = lang === 'zh' ? '' : 'none';
+    // 按钮高亮
+    langEnBtn.classList.toggle('active', lang === 'en');
+    langZhBtn.classList.toggle('active', lang === 'zh');
+}
+
+langEnBtn.addEventListener('click', () => setLang('en'));
+langZhBtn.addEventListener('click', () => setLang('zh'));
+
+// 默认英文
+setLang('en'); 

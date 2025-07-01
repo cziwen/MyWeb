@@ -15,13 +15,24 @@
             <div class="nav-logo">
                 <a href="#home">Max Chen</a>
             </div>
-            <ul class="nav-menu">
+            <ul class="nav-menu" id="nav-menu-en">
+                <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+                <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <ul class="nav-menu" id="nav-menu-zh" style="display:none;">
                 <li class="nav-item"><a href="#home" class="nav-link">首页</a></li>
                 <li class="nav-item"><a href="#about" class="nav-link">关于我</a></li>
                 <li class="nav-item"><a href="#skills" class="nav-link">技能</a></li>
                 <li class="nav-item"><a href="#projects" class="nav-link">项目</a></li>
                 <li class="nav-item"><a href="#contact" class="nav-link">联系</a></li>
             </ul>
+            <div class="lang-switcher">
+                <button id="lang-en" class="lang-btn active">EN</button>
+                <button id="lang-zh" class="lang-btn">中文</button>
+            </div>
             <div class="hamburger">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -34,21 +45,29 @@
     <section id="home" class="hero">
         <div class="hero-container">
             <div class="hero-content">
-                <h1 class="hero-title">Max Chen</h1>
-                <p class="hero-subtitle">Applied Mathematics & Data Science @ University of Washington</p>
-                <p class="hero-description">
-                    Passionate about high-performance and parallel computing—especially GPU-accelerated workloads—and fascinated by uncovering relationships among data in high-dimensional spaces.<br>
-                    <span style="color:var(--accent-color)">Seeking a summer internship to apply and deepen these skills while building and optimizing data-intensive quantitative systems.</span>
-                </p>
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">查看项目</a>
-                    <a href="#contact" class="btn btn-secondary">联系我</a>
+                <div id="home-en">
+                    <h1 class="hero-title">Max Chen</h1>
+                    <p class="hero-subtitle">Applied Mathematics & Data Science @ University of Washington</p>
+                    <p class="hero-description">
+                        Passionate about high-performance and parallel computing—especially GPU-accelerated workloads—and fascinated by uncovering relationships among data in high-dimensional spaces.<br>
+                        <span style="color:var(--accent-color)">Seeking a summer internship to apply and deepen these skills while building and optimizing data-intensive quantitative systems.</span>
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary">View Projects</a>
+                        <a href="#contact" class="btn btn-secondary">Contact</a>
+                    </div>
                 </div>
-                <div class="contact-items" style="margin-top:2rem;">
-                    <div class="contact-item"><i class="fas fa-map-marker-alt"></i> Seattle, WA</div>
-                    <div class="contact-item"><i class="fas fa-phone"></i> +1-206-476-6941</div>
-                    <div class="contact-item"><i class="fas fa-envelope"></i> <a href="mailto:chenziwenyds@gmail.com">chenziwenyds@gmail.com</a></div>
-                    <div class="contact-item"><i class="fab fa-github"></i> <a href="https://github.com/cziwen" target="_blank">github.com/cziwen</a></div>
+                <div id="home-zh" style="display:none;">
+                    <h1 class="hero-title">陈子文</h1>
+                    <p class="hero-subtitle">华盛顿大学 应用数学与数据科学</p>
+                    <p class="hero-description">
+                        热衷于高性能与并行计算，尤其是GPU加速工作负载。喜欢在高维数据中挖掘关系，致力于数据密集型系统的优化与构建。<br>
+                        <span style="color:var(--accent-color)">正在寻找暑期实习机会，应用并提升相关技能。</span>
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary">查看项目</a>
+                        <a href="#contact" class="btn btn-secondary">联系我</a>
+                    </div>
                 </div>
             </div>
             <div class="hero-image">
@@ -62,13 +81,18 @@
     <!-- 教育背景 -->
     <section id="about" class="about">
         <div class="container">
-            <h2 class="section-title">教育背景</h2>
+            <h2 class="section-title" id="about-title-en">Education</h2>
+            <h2 class="section-title" id="about-title-zh" style="display:none;">教育背景</h2>
             <div class="about-content">
-                <div class="about-text">
+                <div class="about-text" id="about-en">
                     <h3>University of Washington, Seattle</h3>
                     <p>B.S. in Applied Mathematics & Data Science <span style="float:right">Sep 2022 – Feb 2026 (expected)</span></p>
                     <p>GPA: 3.84/4.00</p>
-                    <p><b>Relevant Coursework:</b> CFRM 421 (ML in Finance), AMATH 482 (Computational Methods), AMATH 483 (Hi-Performance Compute), CSE 414 (Database)</p>
+                </div>
+                <div class="about-text" id="about-zh" style="display:none;">
+                    <h3>华盛顿大学（西雅图）</h3>
+                    <p>应用数学与数据科学学士 <span style="float:right">2022年9月 – 2026年2月（预计）</span></p>
+                    <p>GPA: 3.84/4.00</p>
                 </div>
                 <div class="about-image">
                     <div class="about-placeholder">
@@ -82,10 +106,11 @@
     <!-- 技能部分 -->
     <section id="skills" class="skills">
         <div class="container">
-            <h2 class="section-title">技能专长</h2>
-            <div class="skills-grid">
+            <h2 class="section-title" id="skills-title-en">Skills</h2>
+            <h2 class="section-title" id="skills-title-zh" style="display:none;">技能专长</h2>
+            <div class="skills-grid" id="skills-en">
                 <div class="skill-category">
-                    <h3>编程语言 & 库</h3>
+                    <h3>Languages & Libraries</h3>
                     <div class="skill-items">
                         <div class="skill-item"><span class="skill-name">Python (Pandas, NumPy, scikit-learn, PyTorch, Concurrent)</span></div>
                         <div class="skill-item"><span class="skill-name">C++ (CUDA kernels)</span></div>
@@ -93,7 +118,34 @@
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h3>工具 & 系统</h3>
+                    <h3>Tools & Systems</h3>
+                    <div class="skill-items">
+                        <div class="skill-item"><span class="skill-name">Linux</span></div>
+                        <div class="skill-item"><span class="skill-name">Git</span></div>
+                        <div class="skill-item"><span class="skill-name">MPI</span></div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Finance Knowledge</h3>
+                    <div class="skill-items">
+                        <div class="skill-item"><span class="skill-name">Factor modeling</span></div>
+                        <div class="skill-item"><span class="skill-name">Basic options pricing</span></div>
+                        <div class="skill-item"><span class="skill-name">Risk metrics</span></div>
+                        <div class="skill-item"><span class="skill-name">Time-series forecasting</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="skills-grid" id="skills-zh" style="display:none;">
+                <div class="skill-category">
+                    <h3>编程语言与库</h3>
+                    <div class="skill-items">
+                        <div class="skill-item"><span class="skill-name">Python（Pandas, NumPy, scikit-learn, PyTorch, 并发）</span></div>
+                        <div class="skill-item"><span class="skill-name">C++（CUDA内核）</span></div>
+                        <div class="skill-item"><span class="skill-name">SQL</span></div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>工具与系统</h3>
                     <div class="skill-items">
                         <div class="skill-item"><span class="skill-name">Linux</span></div>
                         <div class="skill-item"><span class="skill-name">Git</span></div>
@@ -103,10 +155,10 @@
                 <div class="skill-category">
                     <h3>金融知识</h3>
                     <div class="skill-items">
-                        <div class="skill-item"><span class="skill-name">Factor modeling</span></div>
-                        <div class="skill-item"><span class="skill-name">Basic options pricing</span></div>
-                        <div class="skill-item"><span class="skill-name">Risk metrics</span></div>
-                        <div class="skill-item"><span class="skill-name">Time-series forecasting</span></div>
+                        <div class="skill-item"><span class="skill-name">因子建模</span></div>
+                        <div class="skill-item"><span class="skill-name">期权定价基础</span></div>
+                        <div class="skill-item"><span class="skill-name">风险指标</span></div>
+                        <div class="skill-item"><span class="skill-name">时间序列预测</span></div>
                     </div>
                 </div>
             </div>
@@ -116,8 +168,9 @@
     <!-- 项目展示部分 -->
     <section id="projects" class="projects">
         <div class="container">
-            <h2 class="section-title">项目经历</h2>
-            <div class="projects-grid">
+            <h2 class="section-title" id="projects-title-en">Projects</h2>
+            <h2 class="section-title" id="projects-title-zh" style="display:none;">项目经历</h2>
+            <div class="projects-grid" id="projects-en">
                 <div class="project-card">
                     <div class="project-image"><div class="project-placeholder"><i class="fas fa-bolt"></i></div></div>
                     <div class="project-content">
@@ -138,7 +191,7 @@
                     <div class="project-image"><div class="project-placeholder"><i class="fas fa-robot"></i></div></div>
                     <div class="project-content">
                         <h3>Domain-Specific LLM Training</h3>
-                        <p>Collected and cleaned financial reports from SEC, generated Alpaca-style JSONL datasets, and fine-tuned Qwen-2.5-1.5B for ≈20x improvement in ROUGE-1/2/L scores on opencompass evaluation.</p>
+                        <p>Collected and cleaned financial reports from SEC, generated Alpaca-style JSONL datasets, and fine-tuned Qwen-2.5-1.5B for ≈1.3x improvement in ROUGE-1/2/L scores on opencompass evaluation.</p>
                         <div class="project-tech"><span class="tech-tag">PyTorch</span><span class="tech-tag">Transformers</span><span class="tech-tag">bs4</span></div>
                     </div>
                 </div>
@@ -167,17 +220,66 @@
                     </div>
                 </div>
             </div>
+            <div class="projects-grid" id="projects-zh" style="display:none;">
+                <div class="project-card">
+                    <div class="project-image"><div class="project-placeholder"><i class="fas fa-bolt"></i></div></div>
+                    <div class="project-content">
+                        <h3>实时量化数据接入管道</h3>
+                        <p>构建高频订单流接入管道，支持 <b>每秒10万单</b>，基于异步WebSocket I/O和零拷贝缓冲区。实现实时特征聚合，并将事件对齐数据输入下游机器学习模型。</p>
+                        <div class="project-tech"><span class="tech-tag">WebSocket</span><span class="tech-tag">并发</span></div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image"><div class="project-placeholder"><i class="fas fa-project-diagram"></i></div></div>
+                    <div class="project-content">
+                        <h3>因子搜索与分析管道</h3>
+                        <p>基于 <i>Dijkstra算法</i> 的管道，迭代扩展因子空间，通过全局IC、滚动IR和相关性为潜在Alpha因子打分。结合SVD、UMAP/t-SNE和KMeans评估因子可分性。</p>
+                        <div class="project-tech"><span class="tech-tag">scikit-learn</span><span class="tech-tag">并发</span></div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image"><div class="project-placeholder"><i class="fas fa-robot"></i></div></div>
+                    <div class="project-content">
+                        <h3>领域特定大模型训练</h3>
+                        <p>收集并清洗SEC财报，生成Alpaca风格JSONL数据集，微调Qwen-2.5-1.5B，opencompass评测ROUGE-1/2/L提升约1.3倍。</p>
+                        <div class="project-tech"><span class="tech-tag">PyTorch</span><span class="tech-tag">Transformers</span><span class="tech-tag">bs4</span></div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image"><div class="project-placeholder"><i class="fas fa-chart-line"></i></div></div>
+                    <div class="project-content">
+                        <h3>市场状态分类器</h3>
+                        <p>构建三分类集成模型，区分高频牛市、熊市和中性市场，F1分数较逻辑回归基线提升29%。</p>
+                        <div class="project-tech"><span class="tech-tag">ML</span><span class="tech-tag">scikit-learn</span><span class="tech-tag">PyTorch</span></div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image"><div class="project-placeholder"><i class="fas fa-gamepad"></i></div></div>
+                    <div class="project-content">
+                        <h3>股票市场模拟器</h3>
+                        <p>实现虚拟限价订单簿游戏和基于代理的市场参与者，用于研究微观结构和策略盈亏。</p>
+                        <div class="project-tech"><span class="tech-tag">Unity (C#)</span></div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image"><div class="project-placeholder"><i class="fas fa-ship"></i></div></div>
+                    <div class="project-content">
+                        <h3>多人海洋冒险游戏AI</h3>
+                        <p>实现群体移动、路径规划和网络同步的船只行为。</p>
+                        <div class="project-tech"><span class="tech-tag">Unity (C#)</span><span class="tech-tag">分布式</span></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- 联系方式部分 -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title">联系我</h2>
+            <h2 class="section-title" id="contact-title-en">Contact</h2>
+            <h2 class="section-title" id="contact-title-zh" style="display:none;">联系我</h2>
             <div class="contact-content">
-                <div class="contact-info">
-                    <h3>References available if needed</h3>
-                    <p>欢迎通过邮箱或GitHub联系我，或在LinkedIn上添加好友。</p>
+                <div class="contact-info" style="width:100%" id="contact-info-en">
                     <div class="contact-items">
                         <div class="contact-item"><i class="fas fa-envelope"></i> <a href="mailto:chenziwenyds@gmail.com">chenziwenyds@gmail.com</a></div>
                         <div class="contact-item"><i class="fab fa-github"></i> <a href="https://github.com/cziwen" target="_blank">github.com/cziwen</a></div>
@@ -187,22 +289,15 @@
                         <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
-                <div class="contact-form">
-                    <form>
-                        <div class="form-group">
-                            <input type="text" placeholder="您的姓名" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" placeholder="您的邮箱" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" placeholder="主题">
-                        </div>
-                        <div class="form-group">
-                            <textarea placeholder="您的消息" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">发送消息</button>
-                    </form>
+                <div class="contact-info" style="width:100%;display:none;" id="contact-info-zh">
+                    <div class="contact-items">
+                        <div class="contact-item"><i class="fas fa-envelope"></i> <a href="mailto:chenziwenyds@gmail.com">chenziwenyds@gmail.com</a></div>
+                        <div class="contact-item"><i class="fab fa-github"></i> <a href="https://github.com/cziwen" target="_blank">github.com/cziwen</a></div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/cziwen" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -211,7 +306,8 @@
     <!-- 页脚 -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 Max Chen. All rights reserved.</p>
+            <p id="footer-en">&copy; 2024 Max Chen. All rights reserved.</p>
+            <p id="footer-zh" style="display:none;">&copy; 2024 陈子文. 保留所有权利。</p>
         </div>
     </footer>
 

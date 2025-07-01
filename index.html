@@ -43,6 +43,11 @@
 
     <!-- 首页部分 -->
     <section id="home" class="hero">
+        <!-- 背景视频 -->
+        <video autoplay muted loop id="bgVideo" class="background-video">
+            <source src="图片视频/背景视频.MOV" type="video/mp4">
+            您的浏览器不支持视频标签。
+        </video>
         <div class="hero-container">
             <div class="hero-content">
                 <div id="home-en">
@@ -71,8 +76,8 @@
                 </div>
             </div>
             <div class="hero-image">
-                <div class="profile-placeholder">
-                    <i class="fas fa-user"></i>
+                <div class="profile-image">
+                    <img src="图片视频/头像.jpg" alt="Max Chen" class="profile-photo">
                 </div>
             </div>
         </div>
@@ -95,8 +100,8 @@
                     <p>GPA: 3.84/4.00</p>
                 </div>
                 <div class="about-image">
-                    <div class="about-placeholder">
-                        <i class="fas fa-graduation-cap"></i>
+                    <div class="school-logo">
+                        <img src="图片视频/uw_logo.webp" alt="University of Washington Logo" class="logo-image">
                     </div>
                 </div>
             </div>
@@ -179,14 +184,18 @@
                         <div class="project-tech"><span class="tech-tag">WebSocket</span><span class="tech-tag">Concurrent</span></div>
                     </div>
                 </div>
-                <div class="project-card">
-                    <div class="project-image"><div class="project-placeholder"><i class="fas fa-project-diagram"></i></div></div>
-                    <div class="project-content">
-                        <h3>Factor Searching & Analysis Pipeline</h3>
-                        <p>Built a <i>Dijkstra's-inspired</i> pipeline to iteratively expand cross-factor space, scoring candidates by global IC, rolling IR, and correlation for latent alpha drivers. Used SVD, UMAP/t-SNE, and KMeans for factor separability.</p>
-                        <div class="project-tech"><span class="tech-tag">scikit-learn</span><span class="tech-tag">Concurrent</span></div>
+                <a href="https://github.com/cziwen/TockFormer/blob/main/Tutorial/factorFactory_Tutorial_en.ipynb" target="_blank" class="project-link-card">
+                  <div class="project-card">
+                    <div class="project-image">
+                      <img src="图片视频/factor_analysis_search_screenshot.jpg" alt="Factor Searching Cover" class="project-cover">
                     </div>
-                </div>
+                    <div class="project-content">
+                      <h3>Factor Searching & Analysis Pipeline</h3>
+                      <p>Built a <i>Dijkstra's-inspired</i> pipeline to iteratively expand cross-factor space, scoring candidates by global IC, rolling IR, and correlation for latent alpha drivers. Used SVD, UMAP/t-SNE, and KMeans for factor separability.</p>
+                      <div class="project-tech"><span class="tech-tag">scikit-learn</span><span class="tech-tag">Concurrent</span></div>
+                    </div>
+                  </div>
+                </a>
                 <div class="project-card">
                     <div class="project-image"><div class="project-placeholder"><i class="fas fa-robot"></i></div></div>
                     <div class="project-content">
@@ -212,7 +221,9 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <div class="project-image"><div class="project-placeholder"><i class="fas fa-ship"></i></div></div>
+                    <div class="project-image">
+                        <img src="图片视频/ooink_multiply_oceangame_screenshot.jpg" alt="Ocean Game Cover" class="project-cover">
+                    </div>
                     <div class="project-content">
                         <h3>Multiplayer Ocean Adventure Game AI</h3>
                         <p>Implemented flocking, pathfinding, and synchronized ship behaviors across the network.</p>
@@ -229,14 +240,18 @@
                         <div class="project-tech"><span class="tech-tag">WebSocket</span><span class="tech-tag">并发</span></div>
                     </div>
                 </div>
-                <div class="project-card">
-                    <div class="project-image"><div class="project-placeholder"><i class="fas fa-project-diagram"></i></div></div>
-                    <div class="project-content">
-                        <h3>因子搜索与分析管道</h3>
-                        <p>基于 <i>Dijkstra算法</i> 的管道，迭代扩展因子空间，通过全局IC、滚动IR和相关性为潜在Alpha因子打分。结合SVD、UMAP/t-SNE和KMeans评估因子可分性。</p>
-                        <div class="project-tech"><span class="tech-tag">scikit-learn</span><span class="tech-tag">并发</span></div>
+                <a href="https://github.com/cziwen/TockFormer/blob/main/Tutorial/factorFactory_Tutorial_en.ipynb" target="_blank" class="project-link-card">
+                  <div class="project-card">
+                    <div class="project-image">
+                      <img src="图片视频/factor_analysis_search_screenshot.jpg" alt="Factor Searching Cover" class="project-cover">
                     </div>
-                </div>
+                    <div class="project-content">
+                      <h3>因子搜索与分析管道</h3>
+                      <p>基于 <i>Dijkstra算法</i> 的管道，迭代扩展因子空间，通过全局IC、滚动IR和相关性为潜在Alpha因子打分。结合SVD、UMAP/t-SNE和KMeans评估因子可分性。</p>
+                      <div class="project-tech"><span class="tech-tag">scikit-learn</span><span class="tech-tag">并发</span></div>
+                    </div>
+                  </div>
+                </a>
                 <div class="project-card">
                     <div class="project-image"><div class="project-placeholder"><i class="fas fa-robot"></i></div></div>
                     <div class="project-content">
@@ -262,7 +277,9 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <div class="project-image"><div class="project-placeholder"><i class="fas fa-ship"></i></div></div>
+                    <div class="project-image">
+                        <img src="图片视频/ooink_multiply_oceangame_screenshot.jpg" alt="Ocean Game Cover" class="project-cover">
+                    </div>
                     <div class="project-content">
                         <h3>多人海洋冒险游戏AI</h3>
                         <p>实现群体移动、路径规划和网络同步的船只行为。</p>

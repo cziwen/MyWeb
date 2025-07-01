@@ -1,3 +1,43 @@
+// 背景视频控制
+const bgVideo = document.getElementById('bgVideo');
+if (bgVideo) {
+    // 确保视频自动播放
+    bgVideo.play().catch(function(error) {
+        console.log("视频自动播放失败:", error);
+        // 如果自动播放失败，尝试静音播放
+        bgVideo.muted = true;
+        bgVideo.play().catch(function(error) {
+            console.log("静音播放也失败:", error);
+        });
+    });
+    
+    // 监听视频加载完成事件
+    bgVideo.addEventListener('loadeddata', function() {
+        console.log("背景视频加载完成");
+    });
+    
+    // 监听视频错误事件
+    bgVideo.addEventListener('error', function(e) {
+        console.log("视频播放错误:", e);
+    });
+    
+    // 监听滚动事件，控制视频播放状态
+    window.addEventListener('scroll', function() {
+        const heroSection = document.getElementById('home');
+        const heroRect = heroSection.getBoundingClientRect();
+        
+        // 如果hero部分完全不在视窗内，暂停视频
+        if (heroRect.bottom < 0 || heroRect.top > window.innerHeight) {
+            bgVideo.pause();
+        } else {
+            // 如果hero部分在视窗内，播放视频
+            bgVideo.play().catch(function(error) {
+                console.log("视频播放失败:", error);
+            });
+        }
+    });
+}
+
 // 移动端导航菜单切换
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
@@ -138,6 +178,46 @@ window.addEventListener('load', () => {
         typeWriter(heroTitle, originalText, 80);
     }
 });
+
+// 添加头像交互效果
+const profileImage = document.querySelector('.profile-image');
+if (profileImage) {
+    profileImage.addEventListener('mouseenter', function() {
+        this.style.transform = 'scale(1.05) rotate(2deg)';
+    });
+    
+    profileImage.addEventListener('mouseleave', function() {
+        this.style.transform = 'scale(1) rotate(0deg)';
+    });
+    
+    // 添加点击效果
+    profileImage.addEventListener('click', function() {
+        this.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            this.style.transform = 'scale(1)';
+        }, 150);
+    });
+}
+
+// 添加学校logo交互效果
+const schoolLogo = document.querySelector('.school-logo');
+if (schoolLogo) {
+    schoolLogo.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-5px) scale(1.02)';
+    });
+    
+    schoolLogo.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0) scale(1)';
+    });
+    
+    // 添加点击效果
+    schoolLogo.addEventListener('click', function() {
+        this.style.transform = 'translateY(-5px) scale(0.98)';
+        setTimeout(() => {
+            this.style.transform = 'translateY(-5px) scale(1.02)';
+        }, 150);
+    });
+}
 
 // 添加项目卡片悬停效果
 document.querySelectorAll('.project-card').forEach(card => {

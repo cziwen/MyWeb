@@ -19,14 +19,14 @@
                 <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
                 <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
                 <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
-                <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="#projects" class="nav-link">Past Projects</a></li>
                 <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
             <ul class="nav-menu" id="nav-menu-zh" style="display:none;">
                 <li class="nav-item"><a href="#home" class="nav-link">首页</a></li>
                 <li class="nav-item"><a href="#about" class="nav-link">关于我</a></li>
                 <li class="nav-item"><a href="#skills" class="nav-link">技能</a></li>
-                <li class="nav-item"><a href="#projects" class="nav-link">项目</a></li>
+                <li class="nav-item"><a href="#projects" class="nav-link">往期项目</a></li>
                 <li class="nav-item"><a href="#contact" class="nav-link">联系</a></li>
             </ul>
             <div class="lang-switcher">
@@ -58,7 +58,7 @@
                         <span style="color:var(--accent-color)">Seeking a summer internship to apply and deepen these skills while building and optimizing data-intensive quantitative systems.</span>
                     </p>
                     <div class="hero-buttons">
-                        <a href="#projects" class="btn btn-primary">View Projects</a>
+                        <a href="#projects" class="btn btn-primary">View Past Projects</a>
                         <a href="#contact" class="btn btn-secondary">Contact</a>
                     </div>
                 </div>
@@ -70,7 +70,7 @@
                         <span style="color:var(--accent-color)">正在寻找暑期实习机会，应用并提升相关技能。</span>
                     </p>
                     <div class="hero-buttons">
-                        <a href="#projects" class="btn btn-primary">查看项目</a>
+                        <a href="#projects" class="btn btn-primary">查看往期项目</a>
                         <a href="#contact" class="btn btn-secondary">联系我</a>
                     </div>
                 </div>
@@ -170,11 +170,52 @@
         </div>
     </section>
 
+    <!-- 精选项目部分 -->
+    <section id="star-projects" class="star-projects">
+        <div class="container">
+            <h2 class="section-title" id="star-title-en">Star Project</h2>
+            <h2 class="section-title" id="star-title-zh" style="display:none;">精选项目</h2>
+            <div class="projects-grid" id="star-projects-en">
+                <!-- 示例精选项目卡片，可根据需要替换 -->
+                <a href="https://github.com/cziwen/TockFormer" target="_blank" class="project-link-card">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="图片视频/factor_analysis_search_screenshot.jpg" alt="Star Project Cover" class="project-cover">
+                        </div>
+                        <div class="project-content">
+                            <h3>TockFormer: Factor Analysis Pipeline</h3>
+                            <p>Highly modular pipeline for cross-factor search, alpha mining, and ML-based financial analysis.</p>
+                            <div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">Finance</span></div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="projects-grid" id="star-projects-zh" style="display:none;">
+                <a href="https://github.com/cziwen/TockFormer" target="_blank" class="project-link-card">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="图片视频/factor_analysis_search_screenshot.jpg" alt="Star Project Cover" class="project-cover">
+                        </div>
+                        <div class="project-content">
+                            <h3>TockFormer：因子分析管道</h3>
+                            <p>高度模块化的因子搜索与金融分析管道。</p>
+                            <div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">金融</span></div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- 项目展示部分 -->
     <section id="projects" class="projects">
         <div class="container">
-            <h2 class="section-title" id="projects-title-en">Projects</h2>
-            <h2 class="section-title" id="projects-title-zh" style="display:none;">项目经历</h2>
+            <h2 class="section-title" id="projects-title-en">Past Projects</h2>
+            <h2 class="section-title" id="projects-title-zh" style="display:none;">往期项目</h2>
+            <div style="text-align:right;margin-bottom:16px;">
+                <a href="project-library.html" class="btn btn-outline-primary" id="project-library-link-en">Go to Project Library</a>
+                <a href="project-library.html" class="btn btn-outline-primary" id="project-library-link-zh" style="display:none;">进入项目库</a>
+            </div>
             <div class="projects-grid" id="projects-en">
                 <a href="https://github.com/cziwen/TockFormer/blob/main/Utility/AggrData.py" target="_blank" class="project-link-card">
                 <div class="project-card">
@@ -203,21 +244,31 @@
                   </div>
                 </a>
                 <div class="project-card">
-                    <div class="project-image"><div class="project-placeholder"><i class="fas fa-robot"></i></div></div>
+                    <div class="project-image carousel" id="domain-llm-carousel-index">
+                        <img src="图片视频/domain_llm_01.png" alt="Domain LLM 1" class="project-cover carousel-img" style="display:block;">
+                        <img src="图片视频/domain_llm_02.png" alt="Domain LLM 2" class="project-cover carousel-img" style="display:none;">
+                        <img src="图片视频/domain_llm_03.png" alt="Domain LLM 3" class="project-cover carousel-img" style="display:none;">
+                    </div>
                     <div class="project-content">
                         <h3>Domain-Specific LLM Training</h3>
                         <p>Collected and cleaned financial reports from SEC, generated Alpaca-style JSONL datasets, and fine-tuned Qwen-2.5-1.5B for ≈1.3x improvement in ROUGE-1/2/L scores on opencompass evaluation.</p>
                         <div class="project-tech"><span class="tech-tag">PyTorch</span><span class="tech-tag">Transformers</span><span class="tech-tag">bs4</span></div>
                     </div>
                 </div>
+                <a href="https://github.com/cziwen/BeatBuynHold/blob/main/main.ipynb" target="_blank" class="project-link-card">
                 <div class="project-card">
-                    <div class="project-image"><div class="project-placeholder"><i class="fas fa-chart-line"></i></div></div>
+                    <div class="project-image carousel" id="market-regime-carousel">
+                        <img src="图片视频/MRC_0.png" alt="Market Regime 0" class="project-cover carousel-img" style="display:block;">
+                        <img src="图片视频/MRC_1.png" alt="Market Regime 1" class="project-cover carousel-img" style="display:none;">
+                        <img src="图片视频/MRC_2.png" alt="Market Regime 2" class="project-cover carousel-img" style="display:none;">
+                    </div>
                     <div class="project-content">
                         <h3>Market Regime Classifier</h3>
                         <p>Built a three-class ensemble distinguishing high-frequency bullish, bearish, and neutral regimes; improved F1-score by 29% over a logistic baseline.</p>
                         <div class="project-tech"><span class="tech-tag">ML</span><span class="tech-tag">scikit-learn</span><span class="tech-tag">PyTorch</span></div>
                     </div>
                 </div>
+                </a>
                 <div class="project-card">
                     <div class="project-image carousel" id="stock-trade-carousel">
                         <img src="图片视频/stock_trade_4.png" alt="Stock Trade 4" class="project-cover carousel-img" style="display:block;">
@@ -270,21 +321,31 @@
                   </div>
                 </a>
                 <div class="project-card">
-                    <div class="project-image"><div class="project-placeholder"><i class="fas fa-robot"></i></div></div>
+                    <div class="project-image carousel" id="domain-llm-carousel-index">
+                        <img src="图片视频/domain_llm_01.png" alt="Domain LLM 1" class="project-cover carousel-img" style="display:block;">
+                        <img src="图片视频/domain_llm_02.png" alt="Domain LLM 2" class="project-cover carousel-img" style="display:none;">
+                        <img src="图片视频/domain_llm_03.png" alt="Domain LLM 3" class="project-cover carousel-img" style="display:none;">
+                    </div>
                     <div class="project-content">
                         <h3>领域特定大模型训练</h3>
                         <p>收集并清洗SEC财报，生成Alpaca风格JSONL数据集，微调Qwen-2.5-1.5B，opencompass评测ROUGE-1/2/L提升约1.3倍。</p>
                         <div class="project-tech"><span class="tech-tag">PyTorch</span><span class="tech-tag">Transformers</span><span class="tech-tag">bs4</span></div>
                     </div>
                 </div>
+                <a href="https://github.com/cziwen/BeatBuynHold/blob/main/main.ipynb" target="_blank" class="project-link-card">
                 <div class="project-card">
-                    <div class="project-image"><div class="project-placeholder"><i class="fas fa-chart-line"></i></div></div>
+                    <div class="project-image carousel" id="market-regime-carousel-zh">
+                        <img src="图片视频/MRC_0.png" alt="Market Regime 0" class="project-cover carousel-img" style="display:block;">
+                        <img src="图片视频/MRC_1.png" alt="Market Regime 1" class="project-cover carousel-img" style="display:none;">
+                        <img src="图片视频/MRC_2.png" alt="Market Regime 2" class="project-cover carousel-img" style="display:none;">
+                    </div>
                     <div class="project-content">
                         <h3>市场状态分类器</h3>
                         <p>构建三分类集成模型，区分高频牛市、熊市和中性市场，F1分数较逻辑回归基线提升29%。</p>
                         <div class="project-tech"><span class="tech-tag">ML</span><span class="tech-tag">scikit-learn</span><span class="tech-tag">PyTorch</span></div>
                     </div>
                 </div>
+                </a>
                 <div class="project-card">
                     <div class="project-image carousel" id="stock-trade-carousel-zh">
                         <img src="图片视频/stock_trade_4.png" alt="Stock Trade 4" class="project-cover carousel-img" style="display:block;">

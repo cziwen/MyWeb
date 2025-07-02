@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Library - 项目库</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">Max Chen</a>
+            </div>
+            <ul class="nav-menu" id="nav-menu-en">
+                <li class="nav-item"><a href="index.html#home" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="index.html#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="index.html#skills" class="nav-link">Skills</a></li>
+                <li class="nav-item"><a href="project-library.html" class="nav-link active">Past Projects</a></li>
+                <li class="nav-item"><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <ul class="nav-menu" id="nav-menu-zh" style="display:none;">
+                <li class="nav-item"><a href="index.html#home" class="nav-link">首页</a></li>
+                <li class="nav-item"><a href="index.html#about" class="nav-link">关于我</a></li>
+                <li class="nav-item"><a href="index.html#skills" class="nav-link">技能</a></li>
+                <li class="nav-item"><a href="project-library.html" class="nav-link active">往期项目</a></li>
+                <li class="nav-item"><a href="index.html#contact" class="nav-link">联系</a></li>
+            </ul>
+            <div class="lang-switcher">
+                <button id="lang-en" class="lang-btn active">EN</button>
+                <button id="lang-zh" class="lang-btn">中文</button>
+            </div>
+        </div>
+    </nav>
+    <section class="projects" style="padding-top:100px;">
+        <div class="container">
+            <h2 class="section-title" id="library-title-en">Project Library</h2>
+            <h2 class="section-title" id="library-title-zh" style="display:none;">项目库</h2>
+            <div class="projects-grid" id="library-projects-en">
+                <!-- 复制index.html past projects英文卡片，可根据需要增删 -->
+                <a href="https://github.com/cziwen/TockFormer/blob/main/Utility/AggrData.py" target="_blank" class="project-link-card">
+                <div class="project-card">
+                    <div class="project-image carousel">
+                      <img src="图片视频/fetch_data_0.png" alt="Quant Ingest 0" class="project-cover carousel-img" style="display:block;">
+                      <img src="图片视频/fetch_data_1.png" alt="Quant Ingest 1" class="project-cover carousel-img" style="display:none;">
+                      <img src="图片视频/fetch_data_2.png" alt="Quant Ingest 2" class="project-cover carousel-img" style="display:none;">
+                    </div>
+                    <div class="project-content">
+                        <h3>Real-Time Quantitative Ingest Pipeline</h3>
+                        <p>Built an ingest pipeline to handle high-frequency order flow at <b>100K orders/sec</b> via async WebSocket I/O and zero-copy buffers. Performed on-the-fly feature aggregation and fed event-time-aligned data into downstream ML models for real-time analysis.</p>
+                        <div class="project-tech"><span class="tech-tag">WebSocket</span><span class="tech-tag">Concurrent</span></div>
+                    </div>
+                </div>
+                </a>
+                <a href="https://github.com/cziwen/TockFormer/blob/main/Tutorial/factorFactory_Tutorial_en.ipynb" target="_blank" class="project-link-card">
+                  <div class="project-card">
+                    <div class="project-image">
+                      <img src="图片视频/factor_analysis_search_screenshot.jpg" alt="Factor Searching Cover" class="project-cover">
+                    </div>
+                    <div class="project-content">
+                      <h3>Factor Searching & Analysis Pipeline</h3>
+                      <p>Built a <i>Dijkstra's-inspired</i> pipeline to iteratively expand cross-factor space, scoring candidates by global IC, rolling IR, and correlation for latent alpha drivers. Used SVD, UMAP/t-SNE, and KMeans for factor separability.</p>
+                      <div class="project-tech"><span class="tech-tag">scikit-learn</span><span class="tech-tag">Concurrent</span></div>
+                    </div>
+                  </div>
+                </a>
+                <div class="project-card">
+                    <div class="project-image carousel" id="domain-llm-carousel">
+                        <img src="图片视频/domain_llm_01.png" alt="Domain LLM 1" class="project-cover carousel-img" style="display:block;">
+                        <img src="图片视频/domain_llm_02.png" alt="Domain LLM 2" class="project-cover carousel-img" style="display:none;">
+                        <img src="图片视频/domain_llm_03.png" alt="Domain LLM 3" class="project-cover carousel-img" style="display:none;">
+                    </div>
+                    <div class="project-content">
+                        <h3>Domain-Specific LLM Training</h3>
+                        <p>Collected and cleaned financial reports from SEC, generated Alpaca-style JSONL datasets, and fine-tuned Qwen-2.5-1.5B for ≈1.3x improvement in ROUGE-1/2/L scores on opencompass evaluation.</p>
+                        <div class="project-tech"><span class="tech-tag">PyTorch</span><span class="tech-tag">Transformers</span><span class="tech-tag">bs4</span></div>
+                    </div>
+                </div>
+                <a href="https://github.com/cziwen/BeatBuynHold/blob/main/main.ipynb" target="_blank" class="project-link-card">
+                <div class="project-card">
+                    <div class="project-image carousel">
+                        <img src="图片视频/MRC_0.png" alt="Market Regime 0" class="project-cover carousel-img" style="display:block;">
+                        <img src="图片视频/MRC_1.png" alt="Market Regime 1" class="project-cover carousel-img" style="display:none;">
+                        <img src="图片视频/MRC_2.png" alt="Market Regime 2" class="project-cover carousel-img" style="display:none;">
+                    </div>
+                    <div class="project-content">
+                        <h3>Market Regime Classifier</h3>
+                        <p>Built a three-class ensemble distinguishing high-frequency bullish, bearish, and neutral regimes; improved F1-score by 29% over a logistic baseline.</p>
+                        <div class="project-tech"><span class="tech-tag">ML</span><span class="tech-tag">scikit-learn</span><span class="tech-tag">PyTorch</span></div>
+                    </div>
+                </div>
+                </a>
+                <div class="project-card">
+                    <div class="project-image carousel">
+                        <img src="图片视频/stock_trade_4.png" alt="Stock Trade 4" class="project-cover carousel-img" style="display:block;">
+                        <img src="图片视频/stock_trade_1.jpg" alt="Stock Trade 1" class="project-cover carousel-img" style="display:none;">
+                        <img src="图片视频/stock_trade_2.jpg" alt="Stock Trade 2" class="project-cover carousel-img" style="display:none;">
+                        <img src="图片视频/stock_trade_3.jpg" alt="Stock Trade 3" class="project-cover carousel-img" style="display:none;">
+                    </div>
+                    <div class="project-content">
+                        <h3>Stock Market Simulator</h3>
+                        <p>Implemented a virtual limit-order-book game and agent-based market participants to study microstructure dynamics and strategy P&L.</p>
+                        <div class="project-tech"><span class="tech-tag">Unity (C#)</span></div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <video src="图片视频/demo_ooink_blur.MOV" class="project-cover" autoplay muted loop playsinline style="width:100%;height:200px;object-fit:cover;border-radius:8px 8px 0 0;"></video>
+                    </div>
+                    <div class="project-content">
+                        <h3>Multiplayer Ocean Adventure Game AI</h3>
+                        <p>Implemented flocking, pathfinding, and synchronized ship behaviors across the network.</p>
+                        <div class="project-tech"><span class="tech-tag">Unity (C#)</span><span class="tech-tag">Distributed</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="projects-grid" id="library-projects-zh" style="display:none;">
+                <!-- 复制index.html past projects中文卡片，可根据需要增删 -->
+                <a href="https://github.com/cziwen/TockFormer/blob/main/Utility/AggrData.py" target="_blank" class="project-link-card">
+                <div class="project-card">
+                    <div class="project-image carousel">
+                      <img src="图片视频/fetch_data_0.png" alt="数据接入0" class="project-cover carousel-img" style="display:block;">
+                      <img src="图片视频/fetch_data_1.png" alt="数据接入1" class="project-cover carousel-img" style="display:none;">
+                      <img src="图片视频/fetch_data_2.png" alt="数据接入2" class="project-cover carousel-img" style="display:none;">
+                    </div>
+                    <div class="project-content">
+                        <h3>实时量化数据接入管道</h3>
+                        <p>构建高频订单流接入管道，支持 <b>每秒10万单</b>，基于异步WebSocket I/O和零拷贝缓冲区。实现实时特征聚合，并将事件对齐数据输入下游机器学习模型。</p>
+                        <div class="project-tech"><span class="tech-tag">WebSocket</span><span class="tech-tag">并发</span></div>
+                    </div>
+                </div>
+                </a>
+                <a href="https://github.com/cziwen/TockFormer/blob/main/Tutorial/factorFactory_Tutorial_en.ipynb" target="_blank" class="project-link-card">
+                  <div class="project-card">
+                    <div class="project-image">
+                      <img src="图片视频/factor_analysis_search_screenshot.jpg" alt="Factor Searching Cover" class="project-cover">
+                    </div>
+                    <div class="project-content">
+                      <h3>因子搜索与分析管道</h3>
+                      <p>基于 <i>Dijkstra算法</i> 的管道，迭代扩展因子空间，通过全局IC、滚动IR和相关性为潜在Alpha因子打分。结合SVD、UMAP/t-SNE和KMeans评估因子可分性。</p>
+                      <div class="project-tech"><span class="tech-tag">scikit-learn</span><span class="tech-tag">并发</span></div>
+                    </div>
+                  </div>
+                </a>
+                <div class="project-card">
+                    <div class="project-image carousel" id="domain-llm-carousel">
+                        <img src="图片视频/domain_llm_01.png" alt="Domain LLM 1" class="project-cover carousel-img" style="display:block;">
+                        <img src="图片视频/domain_llm_02.png" alt="Domain LLM 2" class="project-cover carousel-img" style="display:none;">
+                        <img src="图片视频/domain_llm_03.png" alt="Domain LLM 3" class="project-cover carousel-img" style="display:none;">
+                    </div>
+                    <div class="project-content">
+                        <h3>领域特定大模型训练</h3>
+                        <p>收集并清洗SEC财报，生成Alpaca风格JSONL数据集，微调Qwen-2.5-1.5B，opencompass评测ROUGE-1/2/L提升约1.3倍。</p>
+                        <div class="project-tech"><span class="tech-tag">PyTorch</span><span class="tech-tag">Transformers</span><span class="tech-tag">bs4</span></div>
+                    </div>
+                </div>
+                <a href="https://github.com/cziwen/BeatBuynHold/blob/main/main.ipynb" target="_blank" class="project-link-card">
+                <div class="project-card">
+                    <div class="project-image carousel">
+                        <img src="图片视频/MRC_0.png" alt="Market Regime 0" class="project-cover carousel-img" style="display:block;">
+                        <img src="图片视频/MRC_1.png" alt="Market Regime 1" class="project-cover carousel-img" style="display:none;">
+                        <img src="图片视频/MRC_2.png" alt="Market Regime 2" class="project-cover carousel-img" style="display:none;">
+                    </div>
+                    <div class="project-content">
+                        <h3>市场状态分类器</h3>
+                        <p>构建三分类集成模型，区分高频牛市、熊市和中性市场，F1分数较逻辑回归基线提升29%。</p>
+                        <div class="project-tech"><span class="tech-tag">ML</span><span class="tech-tag">scikit-learn</span><span class="tech-tag">PyTorch</span></div>
+                    </div>
+                </div>
+                </a>
+                <div class="project-card">
+                    <div class="project-image carousel">
+                        <img src="图片视频/stock_trade_4.png" alt="Stock Trade 4" class="project-cover carousel-img" style="display:block;">
+                        <img src="图片视频/stock_trade_1.jpg" alt="Stock Trade 1" class="project-cover carousel-img" style="display:none;">
+                        <img src="图片视频/stock_trade_2.jpg" alt="Stock Trade 2" class="project-cover carousel-img" style="display:none;">
+                        <img src="图片视频/stock_trade_3.jpg" alt="Stock Trade 3" class="project-cover carousel-img" style="display:none;">
+                    </div>
+                    <div class="project-content">
+                        <h3>股票市场模拟器</h3>
+                        <p>实现虚拟限价订单簿游戏和基于代理的市场参与者，用于研究微观结构和策略盈亏。</p>
+                        <div class="project-tech"><span class="tech-tag">Unity (C#)</span></div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <video src="图片视频/demo_ooink_blur.MOV" class="project-cover" autoplay muted loop playsinline style="width:100%;height:200px;object-fit:cover;border-radius:8px 8px 0 0;"></video>
+                    </div>
+                    <div class="project-content">
+                        <h3>多人海洋冒险游戏AI</h3>
+                        <p>实现群体移动、路径规划和网络同步的船只行为。</p>
+                        <div class="project-tech"><span class="tech-tag">Unity (C#)</span><span class="tech-tag">分布式</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <p id="footer-en">&copy; 2024 Max Chen. All rights reserved.</p>
+            <p id="footer-zh" style="display:none;">&copy; 2024 陈子文. 保留所有权利。</p>
+        </div>
+    </footer>
+    <script>
+    // 语言切换逻辑
+    const langEnBtn = document.getElementById('lang-en');
+    const langZhBtn = document.getElementById('lang-zh');
+    function setLang(lang) {
+        document.getElementById('library-title-en').style.display = lang === 'en' ? '' : 'none';
+        document.getElementById('library-title-zh').style.display = lang === 'zh' ? '' : 'none';
+        document.getElementById('library-projects-en').style.display = lang === 'en' ? '' : 'none';
+        document.getElementById('library-projects-zh').style.display = lang === 'zh' ? '' : 'none';
+        document.getElementById('nav-menu-en').style.display = lang === 'en' ? '' : 'none';
+        document.getElementById('nav-menu-zh').style.display = lang === 'zh' ? '' : 'none';
+        document.getElementById('footer-en').style.display = lang === 'en' ? '' : 'none';
+        document.getElementById('footer-zh').style.display = lang === 'zh' ? '' : 'none';
+    }
+    langEnBtn.addEventListener('click', function() {
+        setLang('en');
+        langEnBtn.classList.add('active');
+        langZhBtn.classList.remove('active');
+    });
+    langZhBtn.addEventListener('click', function() {
+        setLang('zh');
+        langZhBtn.classList.add('active');
+        langEnBtn.classList.remove('active');
+    });
+    // 默认英文
+    setLang('en');
+
+    // Domain LLM 封面轮播
+    function setupDomainLLMCarousel() {
+        const carousel = document.getElementById('domain-llm-carousel');
+        if (!carousel) return;
+        const imgs = carousel.querySelectorAll('.carousel-img');
+        let idx = 0;
+        setInterval(() => {
+            imgs.forEach((img, i) => {
+                img.style.display = (i === idx) ? 'block' : 'none';
+            });
+            idx = (idx + 1) % imgs.length;
+        }, 2500);
+    }
+    setupDomainLLMCarousel();
+    </script>
+</body>
+</html> 

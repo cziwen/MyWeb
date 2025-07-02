@@ -337,6 +337,14 @@ function setLang(lang) {
     document.getElementById('projects-title-zh').style.display = lang === 'zh' ? '' : 'none';
     document.getElementById('projects-en').style.display = lang === 'en' ? '' : 'none';
     document.getElementById('projects-zh').style.display = lang === 'zh' ? '' : 'none';
+    // 新增：star project区块中英文切换
+    document.getElementById('star-title-en').style.display = lang === 'en' ? '' : 'none';
+    document.getElementById('star-title-zh').style.display = lang === 'zh' ? '' : 'none';
+    document.getElementById('star-projects-en').style.display = lang === 'en' ? '' : 'none';
+    document.getElementById('star-projects-zh').style.display = lang === 'zh' ? '' : 'none';
+    // 新增：project library按钮中英文切换
+    document.getElementById('project-library-link-en').style.display = lang === 'en' ? '' : 'none';
+    document.getElementById('project-library-link-zh').style.display = lang === 'zh' ? '' : 'none';
     // 联系
     document.getElementById('contact-title-en').style.display = lang === 'en' ? '' : 'none';
     document.getElementById('contact-title-zh').style.display = lang === 'zh' ? '' : 'none';
@@ -390,4 +398,53 @@ function setupQuantIngestCarousel() {
         }, 2000);
     });
 }
-window.addEventListener('DOMContentLoaded', setupQuantIngestCarousel); 
+window.addEventListener('DOMContentLoaded', setupQuantIngestCarousel);
+
+// Carousel for Market Regime Classifier (EN & ZH)
+function setupCarousel(carouselId) {
+    const carousel = document.getElementById(carouselId);
+    if (!carousel) return;
+    const imgs = carousel.querySelectorAll('.carousel-img');
+    let idx = 0;
+    let interval = null;
+
+    function showImg(i) {
+        imgs.forEach((img, j) => {
+            img.style.display = (i === j) ? 'block' : 'none';
+        });
+    }
+
+    function start() {
+        interval = setInterval(() => {
+            idx = (idx + 1) % imgs.length;
+            showImg(idx);
+        }, 2500);
+    }
+
+    function stop() {
+        clearInterval(interval);
+    }
+
+    carousel.addEventListener('mouseenter', stop);
+    carousel.addEventListener('mouseleave', start);
+    showImg(idx);
+    start();
+}
+
+setupCarousel('market-regime-carousel');
+setupCarousel('market-regime-carousel-zh');
+
+// Domain LLM 封面轮播（首页）
+function setupDomainLLMCarouselIndex() {
+    const carousel = document.getElementById('domain-llm-carousel-index');
+    if (!carousel) return;
+    const imgs = carousel.querySelectorAll('.carousel-img');
+    let idx = 0;
+    setInterval(() => {
+        imgs.forEach((img, i) => {
+            img.style.display = (i === idx) ? 'block' : 'none';
+        });
+        idx = (idx + 1) % imgs.length;
+    }, 2500);
+}
+setupDomainLLMCarouselIndex(); 

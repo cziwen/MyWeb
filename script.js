@@ -354,4 +354,22 @@ langEnBtn.addEventListener('click', () => setLang('en'));
 langZhBtn.addEventListener('click', () => setLang('zh'));
 
 // 默认英文
-setLang('en'); 
+setLang('en');
+
+// Stock Trade 项目图片轮播
+function setupStockTradeCarousel() {
+    const carousels = [
+        document.getElementById('stock-trade-carousel'),
+        document.getElementById('stock-trade-carousel-zh')
+    ];
+    carousels.forEach(carousel => {
+        if (!carousel) return;
+        const imgs = carousel.querySelectorAll('.carousel-img');
+        let idx = 0;
+        setInterval(() => {
+            imgs.forEach((img, i) => img.style.display = (i === idx ? 'block' : 'none'));
+            idx = (idx + 1) % imgs.length;
+        }, 2000);
+    });
+}
+window.addEventListener('DOMContentLoaded', setupStockTradeCarousel); 

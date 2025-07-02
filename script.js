@@ -372,4 +372,22 @@ function setupStockTradeCarousel() {
         }, 2000);
     });
 }
-window.addEventListener('DOMContentLoaded', setupStockTradeCarousel); 
+window.addEventListener('DOMContentLoaded', setupStockTradeCarousel);
+
+// Real-Time Quantitative Ingest Pipeline 项目图片轮播
+function setupQuantIngestCarousel() {
+    const carousels = [
+        document.getElementById('quant-ingest-carousel'),
+        document.getElementById('quant-ingest-carousel-zh')
+    ];
+    carousels.forEach(carousel => {
+        if (!carousel) return;
+        const imgs = carousel.querySelectorAll('.carousel-img');
+        let idx = 0;
+        setInterval(() => {
+            imgs.forEach((img, i) => img.style.display = (i === idx ? 'block' : 'none'));
+            idx = (idx + 1) % imgs.length;
+        }, 2000);
+    });
+}
+window.addEventListener('DOMContentLoaded', setupQuantIngestCarousel); 

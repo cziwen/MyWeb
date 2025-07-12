@@ -447,4 +447,24 @@ function setupDomainLLMCarouselIndex() {
         idx = (idx + 1) % imgs.length;
     }, 2500);
 }
-setupDomainLLMCarouselIndex(); 
+setupDomainLLMCarouselIndex();
+
+// One Step From Hell 封面轮播
+function setupOSFHCarousel() {
+    const carousels = [
+        document.getElementById('osfh-carousel'),
+        document.getElementById('osfh-carousel-zh'),
+        document.getElementById('osfh-carousel-library'),
+        document.getElementById('osfh-carousel-library-zh')
+    ];
+    carousels.forEach(carousel => {
+        if (!carousel) return;
+        const imgs = carousel.querySelectorAll('.carousel-img');
+        let idx = 0;
+        setInterval(() => {
+            imgs.forEach((img, i) => img.style.display = (i === idx ? 'block' : 'none'));
+            idx = (idx + 1) % imgs.length;
+        }, 2000);
+    });
+}
+window.addEventListener('DOMContentLoaded', setupOSFHCarousel); 
